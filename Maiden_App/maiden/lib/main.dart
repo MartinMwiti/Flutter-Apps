@@ -62,7 +62,12 @@ class _TextInputWidgetState extends State<TextInputWidget> {
     controller.dispose();
   }
 
-  void click() {}
+  void click() {
+    // call the callback. Widget access the other class
+    widget.callback(controller.text);
+    // clear the text input field
+    controller.clear();
+  }
 
   @override
   Widget build(BuildContext context) {
