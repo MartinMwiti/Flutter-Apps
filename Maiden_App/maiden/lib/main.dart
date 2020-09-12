@@ -19,22 +19,42 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String text = "";
+
+  void changeText(String text) {
+    this.setState(() {
+      this.text = text;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text('Hello World!')), body: TextInputWidget());
+        appBar: AppBar(title: Text('Hello World!')),
+        body: Column(children: <Widget>[
+          TextInputWidget(this.changeText),
+          Text(this.text)
+        ]));
   }
 }
 
 class TextInputWidget extends StatefulWidget {
+  final Function(String) callback;
+
+  TextInputWidget(this.callback);
+
   @override
   _TextInputWidgetState createState() => _TextInputWidgetState();
 }
 
 class _TextInputWidgetState extends State<TextInputWidget> {
   final controller = TextEditingController();
-  String text = "";
 
   @override
   void dispose() {
@@ -42,25 +62,20 @@ class _TextInputWidgetState extends State<TextInputWidget> {
     controller.dispose();
   }
 
-  void changeText(text) {
-    if (text == "Hello world!") {
-      controller.clear();
-      text = "";
-    }
-    setState(() {
-      this.text = text;
-    });
-  }
+  void click() {}
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: <Widget>[
-      TextField(
-          controller: this.controller,
-          decoration: InputDecoration(
-              prefixIcon: Icon(Icons.message), labelText: 'Type a message:'),
-          onChanged: (text) => this.changeText(text)),
-      Text(this.text)
-    ]);
+    return TextField(
+        controller: this.controller,
+        decoration: InputDecoration(
+            prefixIcon: Icon(Icons.message),
+            labelText: 'Type a message:',
+            suffixIcon: IconButton(
+              icon: Icon(Icons.send),
+              splashColor: Colors.blue,
+              tooltip: "Post Message",
+              onPressed: this.click,
+            )));
   }
 }
