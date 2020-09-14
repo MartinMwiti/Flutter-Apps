@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "280843814763",
+    "firebase_url": "https://fluttermaidenapp.firebaseio.com",
+    "project_id": "fluttermaidenapp",
+    "storage_bucket": "fluttermaidenapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280843814763:android:81a6ebe22f93209a046e2e",
+        "android_client_info": {
+          "package_name": "com.example.maiden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280843814763-rq0pflk21kvbu0n56mhgkruif8t9ss4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.maiden",
+            "certificate_hash": "a5aa33db31af6beeb7566d841d082ccc25996e8e"
+          }
+        },
+        {
+          "client_id": "280843814763-ean3lte58h0qleb46vpvidg592ua68st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_DrfZEPcb6ZypKoO2Mp-9ExoPCnDf568"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "280843814763-ean3lte58h0qleb46vpvidg592ua68st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
