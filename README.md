@@ -4,6 +4,10 @@ iOS and android apps.
 * [Google sign-in & Firebase authentication using Flutter](https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/)
 * [Get authenticating for firebase(SHA1 Key)](https://developers.google.com/android/guides/client-auth)
 
+* Sync changes to project(firebase) in vscode
+
+    ```./gradlew --refresh-dependecies```
+
 **auth.dart** *--adjustment*
 ```
 import 'package:firebase_auth/firebase_auth.dart';
