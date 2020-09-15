@@ -18,6 +18,13 @@ class Body extends StatefulWidget {
 class _BodyState extends State<Body> {
   FirebaseUser user;
 
+  @override
+  void initState() {
+    // runs once after the app loads.
+    super.initState();
+    signOutGoogle();
+  }
+
   void click() {
     signInWithGoogle().then((user) => {
           this.user = user,
@@ -25,11 +32,11 @@ class _BodyState extends State<Body> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => MyHomePage(user.displayName)))
+                  builder: (context) => MyHomePage(user)))
         });
   }
 
-   Widget googleLoginButton() {
+  Widget googleLoginButton() {
     return OutlineButton(
         onPressed: this.click,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(45)),
@@ -52,9 +59,6 @@ class _BodyState extends State<Body> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.center,
-      child: googleLoginButton()
-    );
+    return Align(alignment: Alignment.center, child: googleLoginButton());
   }
 }
