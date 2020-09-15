@@ -2,6 +2,7 @@
 iOS and android apps.
 
 * [Google sign-in & Firebase authentication using Flutter](https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/)
+* [Get authenticating for firebase(SHA1 Key)](https://developers.google.com/android/guides/client-auth)
 
 **auth.dart** *--adjustment*
 ```
