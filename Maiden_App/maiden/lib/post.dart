@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'database.dart';
 
 class Post {
   String body;
@@ -15,6 +16,11 @@ class Post {
     } else {
       this.usersLiked.add(user.uid);
     }
+    this.update();
+  }
+
+  void update() {
+    updatePost(this, this._id);
   }
 
   void setId(DatabaseReference id) {
@@ -28,4 +34,18 @@ class Post {
       'body': this.body
     };
   }
+}
+
+Post createPost(record) {
+  Map<String, dynamic> attributes = {
+    'author': '',
+    'usersLiked': [],
+    'body': ''
+  };
+
+  record.forEach((key, value) => {attributes[key] = value});
+
+  Post post = new Post(attributes['body'], attributes['author']);
+  post.usersLiked = new Set.from(attributes['usersLiked']);
+  return post;
 }
