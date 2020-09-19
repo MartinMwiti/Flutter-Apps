@@ -1,0 +1,9 @@
+FIREBASE
+
+keytool -list -v -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+
+passkey: android
+
+SHA1: A5:AA:33:DB:31:AF:6B:EE:B7:56:6D:84:1D:08:2C:CC:25:99:6E:8E
+
+(after updating the build.gradle) files.In the cmd after cd to andriod  type ./gradlew --refresh-dependencies

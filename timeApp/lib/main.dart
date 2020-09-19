@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   // MaterialApp - root widget
-  runApp(MaterialApp(
-    home: Home()
-  )
-  );
+  runApp(MaterialApp(home: Home()));
 }
 
 class Home extends StatelessWidget {
@@ -20,11 +17,19 @@ class Home extends StatelessWidget {
       ),
       // Center() widget centalizes whatever is nested inside of it
       body: Center(
-        child: Image.asset('assets/3.jpg')
+          child: RaisedButton.icon(
+            onPressed: (){}, 
+            icon: Icon(
+              Icons.mail,
+              color: Colors.blue,
+            ), 
+            label: Text('mail me'),
+            color: Colors.green[300],
+            )
       ),
       // floatingActionButton sets the button at bottom right.
       floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+        onPressed: () {},
         backgroundColor: Colors.green[300],
         child: Text('click'),
       ),
