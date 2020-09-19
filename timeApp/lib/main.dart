@@ -17,16 +17,12 @@ class Home extends StatelessWidget {
       ),
       // Center() widget centalizes whatever is nested inside of it
       body: Center(
-          child: RaisedButton.icon(
-            onPressed: (){}, 
-            icon: Icon(
-              Icons.mail,
-              color: Colors.blue,
-            ), 
-            label: Text('mail me'),
-            color: Colors.green[300],
-            )
-      ),
+          child: IconButton(
+              icon: Icon(Icons.alternate_email),
+              color: Colors.amber,
+              onPressed: () {
+                print('You clicked');
+              })),
       // floatingActionButton sets the button at bottom right.
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
