@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 void main() {
   // MaterialApp - root widget
   runApp(MaterialApp(
-    home: Scaffold(
+    home: Home()
+  )
+  );
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: Text('TimerApp'),
         backgroundColor: Colors.teal[300],
@@ -13,12 +21,13 @@ void main() {
       // Center() widget centalizes whatever is nested inside of it
       body: Center(
         child: Text(
-          'Hello MyG',
+          'Hello Friend!',
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 20.0,
             fontWeight: FontWeight.bold,
             letterSpacing: 2.0,
             color: Colors.grey[600],
+            fontFamily: 'IndieFlower',
           ),
         ),
       ),
@@ -28,8 +37,6 @@ void main() {
         backgroundColor: Colors.green[300],
         child: Text('click'),
       ),
-    ),
-  )
-  );
+    );
+  }
 }
-
