@@ -17,19 +17,36 @@ class Home extends StatelessWidget {
       ),
       // Center() widget centalizes whatever is nested inside of it
       body: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text('Was brackin'),
-          FlatButton(
-            onPressed: (){}, 
-            color: Colors.amber,
-            child: Text('click')
+        // mainAxisAlignment: MainAxisAlignment.end,
+        // crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Expanded(
+            flex: 3,
+            child: Image.asset('assets/2.jpg')
+            ),
+          Expanded(
+            flex: 1,
+              child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.cyan,
+              child: Text('one'),
+            ),
           ),
-          Container(
-            color: Colors.grey[300],
-            padding: EdgeInsets.all(30),
-            child: Text('Inside container'),
+          Expanded(
+            flex: 1,
+              child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.blue[200],
+              child: Text('two'),
+            ),
+          ),
+          Expanded(
+            flex: 1,
+              child: Container(
+              padding: EdgeInsets.all(30),
+              color: Colors.amber,
+              child: Text('three'),
+            ),
           )
         ],
       ),
