@@ -16,13 +16,23 @@ class Home extends StatelessWidget {
         centerTitle: true,
       ),
       // Center() widget centalizes whatever is nested inside of it
-      body: Center(
-          child: IconButton(
-              icon: Icon(Icons.alternate_email),
-              color: Colors.amber,
-              onPressed: () {
-                print('You clicked');
-              })),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text('Was brackin'),
+          FlatButton(
+            onPressed: (){}, 
+            color: Colors.amber,
+            child: Text('click')
+          ),
+          Container(
+            color: Colors.grey[300],
+            padding: EdgeInsets.all(30),
+            child: Text('Inside container'),
+          )
+        ],
+      ),
       // floatingActionButton sets the button at bottom right.
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
