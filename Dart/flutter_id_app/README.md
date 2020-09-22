@@ -1,4 +1,4 @@
 # flutter_id_app
 
-APP
+* APP
 ![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/assets/flutter_id_app.png)
