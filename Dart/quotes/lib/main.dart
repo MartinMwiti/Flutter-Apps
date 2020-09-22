@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'quote.dart'
+import 'quote.dart';
+import 'quote_card.dart';
 
 void main() {
   runApp(MaterialApp(home: QuoteList()));
@@ -18,9 +19,17 @@ class QuoteList extends StatefulWidget {
 // class object
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
-    Quote(author: 'Oscar', text: "The way to get started is to quit talking and begin doing."),
-    Quote(author: 'Oscar', text: "All our dreams can come true, if we have the courage to pursue them."),
-    Quote(author: 'Oscar', text: "Your time is limited, so don't waste it living someone else's life."), 
+    Quote(
+        author: 'Oscar',
+        text: "The way to get started is to quit talking and begin doing."),
+    Quote(
+        author: 'Oscar',
+        text:
+            "All our dreams can come true, if we have the courage to pursue them."),
+    Quote(
+        author: 'Oscar',
+        text:
+            "Your time is limited, so don't waste it living someone else's life."),
   ];
 
   @override
@@ -38,7 +47,16 @@ class _QuoteListState extends State<QuoteList> {
       body: Column(
         // map fun will cycle through list a list of data & perform a func to each item on the list.
         // children expect a list. So use 'toList()' to turn the iterable to list
-        children: quotes.map((quote) => Text('${quote.text} - ${quote.author}')).toList(),
+        // QuoteCard() return new instance
+        children: quotes
+            .map((quote) => QuoteCard(
+                quote: quote,
+                delete: () {
+                  setState(() {
+                    quotes.remove(quote);
+                  });
+                }))
+            .toList(),
       ),
     );
   }
