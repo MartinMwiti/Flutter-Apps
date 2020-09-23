@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:world_time/services/world_time.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -7,11 +8,13 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
+
   void setupWorldTime() async {
     // creating an instance
     WorldTime instance = WorldTime(
         location: 'Nairobi', flag: 'kenya.png', url: 'Africa/Nairobi');
     await instance.getTime();
+    // Navigator helps navigate/switch to new screen/page
     // pushReplacementNamed avoids adding routes as a stack
     // arguments (optional) allows us to pass data to the new screen/page
     Navigator.pushReplacementNamed(context, '/home', arguments: {
@@ -31,9 +34,13 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.all(50),
-        child: Text('Loading'),
+      backgroundColor: Colors.greenAccent,
+      body: Center(
+        // spinner
+        child: SpinKitCircle(
+            color: Colors.white,
+            size: 80.0,
+          ),
       ),
     );
   }
