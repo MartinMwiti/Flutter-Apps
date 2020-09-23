@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     // get the arguments sent in the loading page
-    data = ModalRoute.of(context).settings.arguments;
+    data = data.isNotEmpty ? data : ModalRoute.of(context).settings.arguments;
     print(data);
 
     // set background
@@ -34,23 +34,29 @@ class _HomeState extends State<Home> {
           child: Column(
             children: [
               FlatButton.icon(
-                  onPressed: () {
+                  onPressed: () async {
                     // Navigator help push to another route/screen
                     // it's 'named' because i'll supply a named route.
                     // it's called 'push' bacause it essentially i'm pushing another scrren on top of another
-                    Navigator.pushNamed(context, '/location');
+                    dynamic result =
+                        await Navigator.pushNamed(context, '/location');
+                    setState(() {
+                      data = {
+                        'time': result['time'],
+                        'location': result['location'],
+                        'isDaytime' : result['isDaytime'],
+                        'flag' : result['flag']
+                      };
+                    });
                   },
                   icon: Icon(
                     Icons.edit_location,
                     color: Colors.grey[300],
                   ),
-                  label: Text(
-                    'Edit location',
-                    style: TextStyle(
-                      color: Colors.grey[300],
-                    )
-                    )
-              ),
+                  label: Text('Edit location',
+                      style: TextStyle(
+                        color: Colors.grey[300],
+                      ))),
               SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,20 +64,14 @@ class _HomeState extends State<Home> {
                   Text(
                     data['location'],
                     style: TextStyle(
-                      fontSize: 28, 
-                      letterSpacing: 2,
-                      color: Colors.white
-                    ),
+                        fontSize: 28, letterSpacing: 2, color: Colors.white),
                   )
                 ],
               ),
               SizedBox(height: 20),
               Text(
                 data['time'],
-                style: TextStyle(
-                  fontSize: 66,
-                  color: Colors.white
-                ),
+                style: TextStyle(fontSize: 66, color: Colors.white),
               )
             ],
           ),
