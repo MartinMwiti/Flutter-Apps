@@ -6,11 +6,25 @@ class ChooseLocation extends StatefulWidget {
 }
 
 class _ChooseLocationState extends State<ChooseLocation> {
-  int counter = 0;
+
+  void getData() async{
+    // simulate network request for a username. SORT OF timeout.
+    String username = await Future.delayed(Duration(seconds: 3), () {
+      return 'mart';
+    });
+
+    String bio = await Future.delayed(Duration(seconds: 2), () {
+      return 'rockstar';
+    });
+
+    print('$username - $bio');
+  }
+
   @override
   // override the original initState from State<ChooseLocation> class
   void initState() {
     super.initState();
+    getData();
     print('initState func run');
   }
 
@@ -27,12 +41,9 @@ class _ChooseLocationState extends State<ChooseLocation> {
         // elevation: 0 removes the shadow thus making it appear flat
         elevation: 0,
       ),
-      body: RaisedButton(onPressed: () {
-        setState(() {
-          counter += 1;
-        });
-      },
-      child: Text('Counter is $counter'),
+      body: RaisedButton(
+        onPressed: () {},
+        child: Text('Counter is'),
       ),
     );
   }
