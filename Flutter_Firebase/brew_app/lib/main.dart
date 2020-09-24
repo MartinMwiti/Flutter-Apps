@@ -1,5 +1,4 @@
 import 'package:brew_app/screens/authenticate/authenticate.dart';
-import 'package:brew_app/screens/wrapper.dart';
 import 'package:flutter/material.dart';
 
 void main() {
