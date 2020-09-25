@@ -1,17 +1,19 @@
-import 'package:brew_app/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:brew_app/services/auth.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
+
   final AuthService _auth = AuthService();
 
   // Text field state
   String email = '';
   String password = '';
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.brown[400],
         elevation: 0,
-        title: Text('Sign in to Brew Crew'),
+        title: Text('Signup to Brew Crew'),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 50),
@@ -47,7 +49,7 @@ class _SignInState extends State<SignIn> {
                     borderRadius: new BorderRadius.circular(30.0)),
                 color: Colors.pink[400],
                 child: Text(
-                  'Sign In',
+                  'Register',
                   style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
