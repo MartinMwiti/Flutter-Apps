@@ -3,11 +3,9 @@ import 'package:brew_app/services/auth.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
-
   // create a constructor
   final Function toggleView;
   SignIn({this.toggleView});
-
 
   @override
   _SignInState createState() => _SignInState();
