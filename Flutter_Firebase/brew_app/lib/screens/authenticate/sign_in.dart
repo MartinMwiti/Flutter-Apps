@@ -1,5 +1,6 @@
 import 'package:brew_app/screens/authenticate/authenticate.dart';
 import 'package:brew_app/services/auth.dart';
+import 'package:brew_app/shared/loading.dart';
 import 'package:flutter/material.dart';
 import 'package:brew_app/shared/constants.dart';
 
@@ -14,8 +15,8 @@ class SignIn extends StatefulWidget {
 
 class _SignInState extends State<SignIn> {
   final AuthService _auth = AuthService();
-
   final _formkey = GlobalKey<FormState>();
+  bool loading = false;
 
   // Text field state
   String email = '';
@@ -24,7 +25,8 @@ class _SignInState extends State<SignIn> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    // if loading is true, show Loading widget, else show the Scaffold widget
+    return loading ? Loading() : Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
@@ -96,11 +98,16 @@ class _SignInState extends State<SignIn> {
                     onPressed: () async {
                       // validate() returns true or false based on specified on formField validator
                       if (_formkey.currentState.validate()) {
+                        // change loading to true
+                        setState(() => loading = !loading);
                         dynamic result = await _auth.signInWithEmailAndPassword(
                             email, password);
                         if (result == null) {
-                          setState(() =>
-                              error = 'No user exists with those credentials.');
+                          setState(() {
+                            error = 'No user exists with those credentials.';
+                            // change loading to false to see the form again
+                            loading = !loading;
+                          });
                         }
                       }
                     }),
