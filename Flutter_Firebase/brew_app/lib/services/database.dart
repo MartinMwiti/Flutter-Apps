@@ -1,3 +1,4 @@
+import 'package:brew_app/models/brew.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseService {
@@ -14,8 +15,19 @@ class DatabaseService {
         .setData({'sugars': sugars, 'name': name, 'strength': strength});
   }
 
+  // brew list from snapshot
+  List<Brew> _brewListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Brew(
+        name: doc.data['name'] ?? '', // if it doesn't exist, return empty string
+        strength: doc.data['strength'] ?? 0,
+        sugar: doc.data['sugars'] ?? '0'
+      );
+    }).toList(); // .toList() convert to list since map returns an iterable
+  }
+
   // Get brew stream
-  Stream<QuerySnapshot> get brews {
-    return brewCollection.snapshots();
+  Stream<List<Brew>> get brews {
+    return brewCollection.snapshots().map(_brewListFromSnapshot);
   }
 }
