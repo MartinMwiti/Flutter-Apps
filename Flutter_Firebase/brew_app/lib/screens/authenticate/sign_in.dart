@@ -1,6 +1,7 @@
 import 'package:brew_app/screens/authenticate/authenticate.dart';
 import 'package:brew_app/services/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:brew_app/shared/constants.dart';
 
 class SignIn extends StatefulWidget {
   // create a constructor
@@ -48,7 +49,10 @@ class _SignInState extends State<SignIn> {
               children: [
                 SizedBox(height: 20),
                 TextFormField(
-                  decoration: new InputDecoration(labelText: 'Email'),
+                  decoration: textInputDecoration.copyWith(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                  ),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Email is required';
@@ -67,7 +71,10 @@ class _SignInState extends State<SignIn> {
                 ),
                 SizedBox(height: 20),
                 TextFormField(
-                  decoration: new InputDecoration(labelText: 'Password'),
+                  decoration: textInputDecoration.copyWith(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                  ),
                   validator: (val) => val.length < 6
                       ? 'Enter a password 6+ characters long'
                       : null,

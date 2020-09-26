@@ -1,3 +1,4 @@
+import 'package:brew_app/shared/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:brew_app/services/auth.dart';
 
@@ -50,7 +51,10 @@ class _RegisterState extends State<Register> {
               children: [
                 SizedBox(height: 20),
                 TextFormField(
-                  decoration: new InputDecoration(labelText: 'Email'),
+                  decoration: textInputDecoration.copyWith(
+                    labelText: 'Email',
+                    hintText: 'Enter your email',
+                  ),
                   validator: (value) {
                     if (value.isEmpty) {
                       return 'Email is required';
@@ -69,7 +73,10 @@ class _RegisterState extends State<Register> {
                 ),
                 SizedBox(height: 20),
                 TextFormField(
-                  decoration: new InputDecoration(labelText: 'Password'),
+                  decoration: textInputDecoration.copyWith(
+                    labelText: 'Password',
+                    hintText: 'Enter your password',
+                  ),
                   validator: (val) => val.length < 6
                       ? 'Enter a password 6+ characters long'
                       : null,
