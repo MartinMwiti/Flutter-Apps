@@ -1,4 +1,3 @@
-import 'package:brew_app/screens/authenticate/authenticate.dart';
 import 'package:brew_app/services/auth.dart';
 import 'package:brew_app/shared/loading.dart';
 import 'package:flutter/material.dart';
