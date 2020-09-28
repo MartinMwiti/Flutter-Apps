@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
     }
 
     return StreamProvider<List<Brew>>.value(
-      value: DatabaseService().brews,
+      value: DatabaseService().brews, // . brews is the name of the stream . When anything changes inside the collection that i set up (database file), we get notified & it sends a value back to our app. the above 'List<Brew>' turns the snapshot value into a List of Brew.
       child: Scaffold(
         backgroundColor: Colors.brown[50],
         appBar: AppBar(
