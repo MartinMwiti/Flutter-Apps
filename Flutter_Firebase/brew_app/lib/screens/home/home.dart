@@ -14,10 +14,11 @@ class Home extends StatelessWidget {
 
     void _showSettingsPanel() {
       showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (context) {
             return Container(
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 60),
+              padding: EdgeInsets.symmetric(vertical: 50, horizontal: 60),
               child: SettingsForm(),
             );
           });
