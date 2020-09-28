@@ -37,7 +37,7 @@ class DatabaseService {
     return UserData(
       uid: uid,
       name: snapshot.data['name'],
-      sugar: snapshot.data['sugar'],
+      sugars: snapshot.data['sugars'],
       strength: snapshot.data['strength'],
     );
   }

@@ -11,7 +11,7 @@ class BrewList extends StatefulWidget {
 class _BrewListState extends State<BrewList> {
   @override
   Widget build(BuildContext context) {
-    // listens to Brew found in home page
+    // access Brew list. In this case, it is found in the home page.
     final brews = Provider.of<List<Brew>>(context);
 
     // ListView.builder() - Creates a scrollable, linear array of widgets that are created on demand.

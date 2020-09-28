@@ -7,7 +7,7 @@ import 'package:brew_app/models/user.dart';
 class Wrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // accessing user data from the provider. type of data is User
+    // accessing user data using the provider. type of data is User object.
     final user = Provider.of<User>(context);
 
     // return either Home or Authenticate widget
