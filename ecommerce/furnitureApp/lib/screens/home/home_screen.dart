@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
     // It help us to make our UI responsive
     SizeConfig().init(context);
     return Scaffold(
-      appBar: buildAppBar(),
+      appBar: buildAppBar(), // extracted a method - func. makes things cleaner
       body: Body(),
     );
   }
