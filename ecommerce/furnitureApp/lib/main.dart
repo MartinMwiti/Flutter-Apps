@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         // The displayColor is applied to [headline4], [headline3], [headline2], [headline1], and [caption].
         textTheme: GoogleFonts.dmSansTextTheme().apply(displayColor: kTextColor),
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        // Almost all our app bar have this style
         appBarTheme: AppBarTheme(
           color: Colors.transparent,
           elevation: 0,
