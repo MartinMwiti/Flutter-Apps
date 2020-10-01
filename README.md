@@ -2,7 +2,7 @@
 Responsive iOS and android apps.
 
 **Furniture App**. 
-Link to the Code is found [Here](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)
+Link to the Code is found **[Here](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)**
 
 * **Loading Screen**
 > ![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/loading.png)
