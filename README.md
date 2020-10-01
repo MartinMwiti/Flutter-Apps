@@ -1,43 +1,20 @@
 # Flutter-Apps
-iOS and android apps.
+Responsive iOS and android apps.
 
-* [Google sign-in & Firebase authentication using Flutter](https://blog.codemagic.io/firebase-authentication-google-sign-in-using-flutter/)
-* [Get authenticating for firebase(SHA1 Key)](https://developers.google.com/android/guides/client-auth)
+**Furniture App**. 
+Link to the Code is found [Here](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)
 
-* Sync changes to project(firebase) in vscode
+* **Loading Screen**
 
-    ```./gradlew --refresh-dependecies```
+<br/>
+![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/loading.png)
 
-**auth.dart** *--adjustment*
-```
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:google_sign_in/google_sign_in.dart';
+* **Home Page Screen**
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
-final GoogleSignIn googleSignIn = GoogleSignIn();
+![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/homePage.png)
+<br/>
+![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/homePage2.png)
 
-Future<FirebaseUser> signInWithGoogle() async {
-  final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
-  final GoogleSignInAuthentication googleSignInAuthentication =
-      await googleSignInAccount.authentication;
-
-  final AuthCredential credential = GoogleAuthProvider.getCredential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken);
-
-  final AuthResult authResult = await _auth.signInWithCredential(credential);
-  final FirebaseUser user = authResult.user;
-
-  assert(!user.isAnonymous);
-  assert(await user.getIdToken() != null);
-
-  final FirebaseUser currentUser = await _auth.currentUser();
-  assert(currentUser.uid == user.uid);
-
-  return user;
-}
-
-void signOutGoogle() async {
-  await googleSignIn.signOut();
-}
-```
+* **Detail Page**
+<br/>
+![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/detailPage.png)
