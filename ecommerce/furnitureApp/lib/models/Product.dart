@@ -31,7 +31,7 @@ class Product {
 // Our Demo Product
 Product product = Product(
   id: "1",
-  price: 1600,
+  price: 16000,
   title: "Wood Frame",
   image: "https://i.imgur.com/sI4GvE6.png",
   category: "Chair",

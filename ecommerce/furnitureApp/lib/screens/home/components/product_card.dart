@@ -18,6 +18,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double defaultSize = SizeConfig.defaultSize;
     return GestureDetector(
+      // wrap product widget so as to navigate to detail page whenever tapped
       onTap: press,
       child: Container(
         // extracted a widget named Products
@@ -32,15 +33,18 @@ class ProductCard extends StatelessWidget {
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 1, // dictates the dimension of the image
-                child: new FadeInImage.assetNetwork(
-                  placeholder: 'assets/pinner.gif',
-                  image: product.image,
-                  fit: BoxFit
-                      .cover, // BoxFit cover - As small as possible while still covering the entire target box.
+                child: Hero( // Wrapped with Widget called Hero for smooth transition animation
+                  tag: product.id,
+                  child: new FadeInImage.assetNetwork(
+                    placeholder: 'assets/spinner.gif',
+                    image: product.image,
+                    fit: BoxFit
+                        .cover, // BoxFit cover - As small as possible while still covering the entire target box.
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: defaultSize),
+                padding: EdgeInsets.symmetric(horizontal: defaultSize / 2),
                 child: TitleText(title: product.title),
               ),
               SizedBox(height: defaultSize / 2),

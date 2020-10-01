@@ -9,8 +9,8 @@ class SizeConfig {
 
   void init(BuildContext context) {
     _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
-    screenHeight = _mediaQueryData.size.height;
+    screenWidth = _mediaQueryData.size.width; // for HTC ONE = 360.0
+    screenHeight = _mediaQueryData.size.height; // for HTC ONE = 592.0
     orientation = _mediaQueryData.orientation; // Orientation - Whether in portrait or landscape.
     // On iPhone 11 the defaultSize = 10 almost
     // So if the screen size increase or decrease then our defaultSize also vary
