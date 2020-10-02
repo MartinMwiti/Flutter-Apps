@@ -2,4 +2,4 @@
 **iOS and Android App**
 
 ### E-commerce App  UI
-![](into.gif)
+![](intro.gif)
