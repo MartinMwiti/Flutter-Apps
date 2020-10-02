@@ -37,16 +37,19 @@ class _CategoriesState extends State<Categories> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 25,
-      // Creates a scrollable, linear array of widgets that are created on demand.
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        // itemCount - Providing a non-null itemCount improves the ability of the [ListView] to estimate the maximum scroll extent.
-        itemCount: categories.length,
-        // The itemBuilder callback will be called only with indices greater than or equal to zero and less than itemCount.
-        itemBuilder: (context, index) =>
-            buildCategory(index), // extracted a method
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: kDefaultPaddin),
+      child: SizedBox(
+        height: 25,
+        // Creates a scrollable, linear array of widgets that are created on demand.
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          // itemCount - Providing a non-null itemCount improves the ability of the [ListView] to estimate the maximum scroll extent.
+          itemCount: categories.length,
+          // The itemBuilder callback will be called only with indices greater than or equal to zero and less than itemCount.
+          itemBuilder: (context, index) =>
+              buildCategory(index), // extracted a method
+        ),
       ),
     );
   }
