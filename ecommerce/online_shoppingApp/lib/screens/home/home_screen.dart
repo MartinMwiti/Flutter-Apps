@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {},
         ),
         IconButton(
-          icon: SvgPicture.asset('assets/icons/add_to_cart.svg',
+          icon: SvgPicture.asset('assets/icons/cart.svg',
               color: kTextColor),
           onPressed: () {},
         ),
