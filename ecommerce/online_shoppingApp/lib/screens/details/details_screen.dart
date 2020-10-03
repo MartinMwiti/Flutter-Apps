@@ -14,7 +14,7 @@ class DetailsScreen extends StatelessWidget {
       // Each product has it's designated color
       backgroundColor: product.color,
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Body(product:product),
     );
   }
 
