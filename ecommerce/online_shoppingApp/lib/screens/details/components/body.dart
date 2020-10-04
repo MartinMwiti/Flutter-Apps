@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_shoppingApp/constraits.dart';
 import 'package:online_shoppingApp/models/Product.dart';
+import 'package:online_shoppingApp/screens/details/components/add_to_cart.dart';
 import 'package:online_shoppingApp/screens/details/components/color_and_size.dart';
 import 'package:online_shoppingApp/screens/details/components/counter_with_fav_btn.dart';
 import 'package:online_shoppingApp/screens/details/components/description.dart';
@@ -25,7 +26,7 @@ class Body extends StatelessWidget {
               // order matters
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: size.height * 0.38),
+                  margin: EdgeInsets.only(top: size.height * 0.37),
                   padding: EdgeInsets.only(
                       top: size.height * 0.12,
                       left: kDefaultPaddin,
@@ -39,8 +40,10 @@ class Body extends StatelessWidget {
                   child: Column(
                     children: [
                       ColorAndSize(product: product),
+                      SizedBox(height: kDefaultPaddin / 2),
                       Description(product: product),
-                      CounterWithFavBtn()
+                      CounterWithFavBtn(),
+                      AddToCart(product: product)
                     ],
                   ),
                 ),
@@ -53,5 +56,4 @@ class Body extends StatelessWidget {
     );
   }
 }
-
 
