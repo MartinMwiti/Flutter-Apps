@@ -3,7 +3,7 @@
 
 #### 1. Furniture App UI
 * Code [Link](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)
->![](https://github.com/abuanwar072/Furniture-App-UI-2-Flutter/blob/master/Intro.gif)
+>![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/furnitureApp/Intro.gif)
 
 ---
 #### 2. Online Shopping App UI
