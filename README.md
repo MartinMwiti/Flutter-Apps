@@ -1,19 +1,13 @@
 # Flutter-Apps
-Responsive iOS and android apps.
+## Responsive iOS and Android apps
 
-**Furniture App**. 
+#### 1. Furniture App UI
+* Code [Link](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)
+>![](https://github.com/abuanwar072/Furniture-App-UI-2-Flutter/blob/master/Intro.gif)
 
-Link to the Code is found **[Here](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)**
+---
+#### 2. Online Shopping App UI
+* Code [Link](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/online_shoppingApp)
 
-* **Loading Screen**
-> ![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/loading.png)
+>![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/online_shoppingApp/intro.gif)
 
-* **Home Page Screen**
-
-> ![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/homePage.png)
-
-
-<!--![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/homePage2.png)-->
-
-* **Detail Page**
-> ![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/Assets/furnitureApp_1/detailPage.png)
