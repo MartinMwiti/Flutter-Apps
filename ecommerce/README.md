@@ -1,4 +1,4 @@
-## iOS and Android apps
+## Responsive iOS and Android apps
 
 #### 1. Furniture App UI
 * Code [Link](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/furnitureApp)
