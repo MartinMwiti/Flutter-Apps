@@ -8,4 +8,4 @@
 #### 2. Online Shopping App UI
 * Code [Link](https://github.com/MartinMwiti/Flutter-Apps/tree/master/ecommerce/online_shoppingApp)
 
->![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/ecommerce/online_shoppingApp/intro.gif)
+>![](https://github.com/MartinMwiti/Flutter-Apps/blob/master/Ecommerce-Apps/online_shoppingApp/intro.gif)
